@@ -14,6 +14,7 @@ import { AddPokemonComponent } from './add-pokemon/add-pokemon.component';
 const pokemonRoutes : Routes = [
   //route plus specifique en haute
   {path:'edit/pokemon/:id' , component : EditPokemonComponent}, //route avec parametre
+  {path:'pokemon/add' , component : AddPokemonComponent}, //route avec parametre
   {path:'pokemons' , component : ListPokemonComponent},
   {path:'pokemon/:id' , component : DetailPokemonComponent}, //route avec parametre
 

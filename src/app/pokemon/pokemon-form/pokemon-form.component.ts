@@ -10,6 +10,7 @@ import { Component, OnInit , Input} from '@angular/core';
 })
 export class PokemonFormComponent implements OnInit {
   
+  isAddForm : boolean ;
   
   @Input() pokemon : Pokemon ; //injecter depuis d'autre component
   types: string[];
@@ -20,8 +21,8 @@ export class PokemonFormComponent implements OnInit {
     //pokemonTypeList
     
   this.types = this.pokemonService.getPokemonTypeList();
-
-
+  this.isAddForm=this.router.url.includes('add');
+  
   }
    
 
@@ -39,9 +40,13 @@ export class PokemonFormComponent implements OnInit {
   }
 
   onSubmit(){
-    this.pokemonService.updatePokemon(this.pokemon).subscribe(() => this.router.navigate(['/pokemon',this.pokemon.id]) );
-    
+
+    this.isAddForm 
+    ? this.pokemonService.addPokemon(this.pokemon).subscribe((PKM)=> this.router.navigate(['/pokemon',PKM.id]))
+    : this.pokemonService.updatePokemon(this.pokemon).subscribe(() => this.router.navigate(['/pokemon',this.pokemon.id]) );
   }
+
+
 
    isTypesValid(type : string) : boolean{
      let length = this.pokemon.types.length;
