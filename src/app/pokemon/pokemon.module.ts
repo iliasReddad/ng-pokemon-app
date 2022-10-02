@@ -9,6 +9,7 @@ import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.componen
 import { ListPokemonComponent } from './list-pokemon/list-pokemon.component';
 import { PokemonFormComponent } from './pokemon-form/pokemon-form.component';
 import { EditPokemonComponent } from './edit-pokemon/edit-pokemon.component';
+import { AddPokemonComponent } from './add-pokemon/add-pokemon.component';
 
 const pokemonRoutes : Routes = [
   //route plus specifique en haute
@@ -25,7 +26,8 @@ const pokemonRoutes : Routes = [
     ListPokemonComponent,
     DetailPokemonComponent,
     PokemonFormComponent,
-    EditPokemonComponent,],
+    EditPokemonComponent,
+    AddPokemonComponent,],
   imports: [
     CommonModule,
     FormsModule,
