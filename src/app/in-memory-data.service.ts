@@ -1,4 +1,3 @@
-import { Pokemon } from './pokemon/pokemon';
 import { POKEMONS } from './pokemon/mock-pokemon-list';
 import { Injectable } from '@angular/core';
 import {InMemoryDbService, RequestInfo}from'angular-in-memory-web-api'
