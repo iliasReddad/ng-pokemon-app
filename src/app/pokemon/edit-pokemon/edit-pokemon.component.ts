@@ -13,13 +13,15 @@ import { PokemonService } from '../pokemon.service';
         <img [src] ="pokemon.picture">
         </p>
         <app-pokemon-form *ngIf="pokemon" [pokemon]="pokemon" ></app-pokemon-form>
+        <h3 *ngIf="!pokemon" class="center">      <pkmn-loader></pkmn-loader>
+
 `,
   styles: [
   ]
 })
 export class EditPokemonComponent implements OnInit {
 
-  pokemon : Pokemon|undefined;
+  pokemon? : Pokemon;
 
   constructor(private pkmservice: PokemonService , private route : ActivatedRoute , private router : Router) { }
 
